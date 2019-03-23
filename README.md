@@ -12,13 +12,13 @@
 
 ![alt text][logo]
 
-[logo]: https://media.giphy.com/media/42EB35PUvJt9Yw546e/giphy.gif "Logo Title Text 2"
+[logo]: https://media.giphy.com/media/42EB35PUvJt9Yw546e/giphy.gif "Loading screen"
 
 </div>
 
 <details id="suod" ><summary align="center"> B R E A K D O W N </summary>
 
-![alt text](https://media.giphy.com/media/559mru8LXASdheGioa/giphy.gif "Logo Title Text 1")
+![alt text](https://media.giphy.com/media/559mru8LXASdheGioa/giphy.gif "website app demo")
 
 </details>
 

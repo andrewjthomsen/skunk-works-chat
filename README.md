@@ -12,25 +12,63 @@
 
 ![alt text][logo]
 
-[logo]: https://media.giphy.com/media/42EB35PUvJt9Yw546e/giphy.gif "Loading screen"
+[logo]: https://media.giphy.com/media/42EB35PUvJt9Yw546e/giphy.gif "Logo Title Text 2"
 
 </div>
 
 <details id="suod" ><summary align="center"> B R E A K D O W N </summary>
-<div align="center">
 
-![alt text](https://media.giphy.com/media/559mru8LXASdheGioa/giphy.gif "website app demo")
+![alt text](https://media.giphy.com/media/559mru8LXASdheGioa/giphy.gif "Logo Title Text 1")
 
-</div>
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
 </details>
 
 <details id="code" align="justify"><summary align="center"> C O D E </summary>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales a nulla nec eleifend. Pellentesque dignissim vitae est id interdum. Curabitur aliquam eleifend nisi ac dictum. Pellentesque sed dignissim leo. Quisque scelerisque tellus nec eros commodo, a bibendum tellus molestie. Suspendisse id urna auctor, convallis magna sed, ultrices orci. Pellentesque pulvinar egestas laoreet. Curabitur suscipit sem et sem scelerisque gravida in accumsan mauris. Aenean cursus erat in ante pharetra, et accumsan justo finibus.
-```html
+
+<h3 align="center">HTML</h3>
+<hr>
 Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+
+```html
+<h1>Hello World</h1>;
 ```
+
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+<hr>
+<h3 align="center">CSS</h3>
+<hr>
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+
 ```css
-Proin vitae egestas magna. Vivamus rutrum quam sed sapien viverra lobortis. Cras ultrices ac leo eget volutpat. Pellentesque elit mi, suscipit non risus vitae, euismod cursus magna. Phasellus bibendum efficitur mi, ut venenatis quam venenatis sed. Integer dictum metus vitae sodales pulvinar. Nunc varius nisi nec est varius, et gravida turpis pharetra. Nulla lacinia ligula orci, mollis vestibulum purus posuere eget. Donec scelerisque nisl ut velit rutrum mollis quis a massa. Nam sodales turpis id justo tincidunt, et imperdiet turpis volutpat. Quisque eu diam ultricies, tristique nibh sed, porttitor nisl.
+* {
+    background-color: blue;
+}
+```
+
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+<hr>
+<h3 align="center">JAVASCRIPT</h3>
+<hr>
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+
+```js
+$('#myDiv').click(function(){
+    //Some code
+});
+```
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+<hr>
+<h3 align="center">MySQL</h3>
+<hr>
+Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
+
+```sql
+SELECT * FROM SkunkWorkChat;
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales a nulla nec eleifend. Pellentesque dignissim vitae est id interdum. Curabitur aliquam eleifend nisi ac dictum. Pellentesque sed dignissim leo. Quisque scelerisque tellus nec eros commodo, a bibendum tellus molestie. Suspendisse id urna auctor, convallis magna sed, ultrices orci. Pellentesque pulvinar egestas laoreet. Curabitur suscipit sem et sem scelerisque gravida in accumsan mauris. Aenean cursus erat in ante pharetra, et accumsan justo finibus.
 </details>
 
 <details id="new" align="justify"><summary align="center"> N E W &nbsp; C O D E  </summary>

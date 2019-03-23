@@ -3,14 +3,21 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.render("index", {});
   });
 
+  app.get("/home", function(req, res) {
+    if (req.session.loggedin) {
+      res.render("home", {
+        msg: "Welcome!",
+        examples: []
+      });
+    } else {
+      res.redirect("/");
+    }
+  });
+
+  /*
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(
@@ -20,6 +27,29 @@ module.exports = function(app) {
         example: dbExample
       });
     });
+  });*/
+
+  app.post("/auth", function(request, response) {
+    var username = request.body.username;
+    var password = request.body.password;
+    if (username && password) {
+      db.User.findAll({
+        where: {
+          username: username,
+          password: password
+        }
+      }).then(function(results) {
+        if (results.length > 0) {
+          request.session.loggedin = true;
+          request.session.username = username;
+          response.redirect("/home");
+        } else {
+          response.redirect("/");
+        }
+      });
+    } else {
+      response.redirect("/");
+    }
   });
 
   // Render 404 page for any unmatched routes

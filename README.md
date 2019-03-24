@@ -17,9 +17,11 @@
 </div>
 
 <details id="suod" ><summary align="center"> B R E A K D O W N </summary>
-
+<div align="center">
+    
 ![alt text](https://media.giphy.com/media/559mru8LXASdheGioa/giphy.gif "Logo Title Text 1")
 
+</div>
 Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.
 
 Fusce tellus nunc, varius sed libero at, viverra ultrices dolor. Donec feugiat laoreet nulla, id dictum lacus suscipit eu. Maecenas tincidunt laoreet nibh, ac viverra nunc aliquet a. Etiam a lacinia arcu. Sed aliquet purus congue mattis blandit. Nunc condimentum urna non eros aliquam convallis. Mauris condimentum interdum felis quis ullamcorper. Nunc sed nunc vitae augue sagittis condimentum.

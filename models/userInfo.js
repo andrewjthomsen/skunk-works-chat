@@ -2,7 +2,8 @@ module.exports = function (sequelize, DataTypes) {
   var userInfo = sequelize.define("userInfo", {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    bio: DataTypes.TEXT
+    bio: DataTypes.TEXT,
+    imagePath: DataTypes.STRING
   });
 
   userInfo.associate = function (models) {

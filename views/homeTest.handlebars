@@ -1,0 +1,42 @@
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Breakdown</a>
+    <a href="#">Code</a>
+    <a href="#">Setup</a>
+    <a href="#">Dev Team</a>
+</div>
+<br>
+<h1 align="center" id="site-hdr-title">S K U N K W O R K S &nbsp; C H A T </h1>
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="https://i.imgur.com/igQT2K9.png" alt="Avatar" width="200" height="200">
+        </div>
+        <div class="flip-card-back">
+            <br>
+            <p>
+                <!-- Predetermined unordered list of moods like facebook moods, stoked, sad, inteferent, happy, etc... -->
+                <p id="myMood">"{{userSecret}}"</p>
+        </div>
+    </div>
+</div>
+<br>
+<ul>
+    <li id="user-name">{{userName}}</li>
+    <li id="user-email"><a href="{{userEmail}}" target="_blank">{{userEmail}}</a></li>
+    <li>{{userStatus}}</li>
+</ul>
+<br>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+<!-- chat room below -->
+
+<div class="container" id="chat-room">
+    <input type="text" id="receiveMessages" placeholder="HELLO">
+    <br>
+    <input type="text" id="getMessages" placeholder="share something awesome...">
+    <button id="send-btn" type="button" class="btn btn-info">
+        <i class="fas fa-paper-plane"></i>
+    </button>
+</div>

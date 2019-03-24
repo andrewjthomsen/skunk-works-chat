@@ -17,7 +17,7 @@
 </div>
 
 <details id="suod" ><summary align="center"> B R E A K D O W N </summary>
-<div align="center">
+<div align="center" border-radius="15px">
     
 ![alt text](https://media.giphy.com/media/559mru8LXASdheGioa/giphy.gif "Logo Title Text 1")
 

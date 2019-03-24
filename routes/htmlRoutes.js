@@ -11,7 +11,7 @@ module.exports = function (app) {
       db.Chat.findAll({
         include: [db.userInfo],
       }).then(function (chatTable) {
-        console.log("chat teable here foo!");
+        console.log("chat table here foo!");
         console.log(chatTable);
         res.render("home", {
           chatTB: chatTable
@@ -70,6 +70,23 @@ module.exports = function (app) {
       });
     } else {
       response.redirect("/");
+    }
+  });
+
+  // logout
+  app.get("/logout", function (req, res) {
+
+    if (req.session) {
+      // delete session object
+      req.session.destroy(function (err) {
+        // cannot access session here
+        if (err) {
+          console.log(err);
+        } else {
+          res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+          res.redirect("/");
+        }
+      });
     }
   });
 

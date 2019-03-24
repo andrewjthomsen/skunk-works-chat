@@ -1,17 +1,36 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.render("index", {});
   });
 
-  app.get("/home", function(req, res) {
+  app.get("/home", function (req, res) {
     if (req.session.loggedin) {
-      res.render("home", {
-        msg: "Welcome!",
-        examples: []
+      db.Chat.findAll({
+        include: [db.userInfo],
+      }).then(function (chatTable) {
+        console.log("chat teable here foo!");
+        console.log(chatTable);
+        res.render("home", {
+          chatTB: chatTable
+        });
       });
+
+    } else {
+      res.redirect("/");
+    }
+  });
+
+  app.get("/hometest", function (req, res) {
+    if (req.session.loggedin) {
+      db.User.findAll({}).then(function (userTable) {
+        res.render("homeTest", {
+          userTB: userTable
+        });
+      });
+
     } else {
       res.redirect("/");
     }
@@ -29,7 +48,7 @@ module.exports = function(app) {
     });
   });*/
 
-  app.post("/auth", function(request, response) {
+  app.post("/auth", function (request, response) {
     var username = request.body.username;
     var password = request.body.password;
     if (username && password) {
@@ -38,10 +57,12 @@ module.exports = function(app) {
           username: username,
           password: password
         }
-      }).then(function(results) {
+      }).then(function (results) {
         if (results.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
+          // stores userID to session data
+          request.session.userId = results[0].dataValues.id;
           response.redirect("/home");
         } else {
           response.redirect("/");
@@ -53,7 +74,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };

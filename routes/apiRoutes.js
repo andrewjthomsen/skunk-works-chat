@@ -29,18 +29,38 @@ module.exports = function (app, io) {
 
   // get all chat history from all users
   app.get("/api/chat/all", function (req, res) {
-    var query = {};
-    if (req.query.id) {
-      query.id = req.query.id;
-    }
 
     db.Chat.findAll({
-      where: query,
-      include: [db.User, db.userInfo]
+      include: [db.userInfo]
     }).then(function (chatTB) {
       console.log(chatTB);
       res.json(chatTB);
     });
+  });
+
+  // get all chat from user
+  app.get("/api/chat/:chatID", function (req, res) {
+
+    db.Chat.findAll({
+      include: [db.userInfo],
+      where: {
+        id: req.params.chatID
+      }
+    }).then(function (chatTB) {
+      res.json(chatTB);
+    });
+
+  });
+
+  // get all userInfo
+  app.get("/api/userinfo/all", function (req, res) {
+
+    db.userInfo.findAll({
+      include: [db.Chat]
+    }).then(function (userInfoTB) {
+      res.json(userInfoTB);
+    });
+
   });
 
   // post a chat
@@ -48,11 +68,13 @@ module.exports = function (app, io) {
 
     console.log(req.body);
     console.log(req.session.userId);
+
     db.Chat.create({
       message: req.body.message,
-      UserId: req.session.userId
+      userInfoId: req.session.userId,
     }).then(function (chatDB) {
-      io.emit("chat-sent", req.body);
+      console.log(chatDB);
+      io.emit("chat-sent", chatDB);
       res.json(chatDB);
     });
   });

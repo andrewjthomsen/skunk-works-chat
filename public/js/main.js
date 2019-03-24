@@ -7,6 +7,12 @@ var API = {
       type: "GET"
     });
   },
+  getOneChat: function (userID) {
+    return $.ajax({
+      url: "/api/chat/" + userID,
+      type: "GET"
+    });
+  },
   sendChat: function (dataToSend) {
     return $.ajax({
       headers: {
@@ -20,8 +26,14 @@ var API = {
 };
 
 socket.on("chat-sent", function (res) {
-  console.log("socket:");
-  console.log(res);
+  console.log("chatID:");
+  console.log(res.id);
+
+  API.getOneChat(res.id).then(function (results) {
+    $("#message-div").append("<h4>" + results[0].userInfo.firstName + "</h4><p>" + results[0].message + "</p>");
+  });
+
+
 });
 
 $("#send-btn").on("click", function (e) {

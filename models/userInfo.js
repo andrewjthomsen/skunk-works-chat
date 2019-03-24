@@ -15,5 +15,9 @@ module.exports = function (sequelize, DataTypes) {
     });
   };
 
+  userInfo.associate = function (models) {
+    models.userInfo.hasMany(models.Chat);
+  };
+
   return userInfo;
 };

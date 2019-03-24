@@ -5,9 +5,9 @@ module.exports = function (sequelize, DataTypes) {
     email: DataTypes.TEXT
   });
 
-  User.associate = function (models) {
-    models.User.hasMany(models.Chat);
-  };
+  // User.associate = function (models) {
+  //   models.User.hasMany(models.Chat);
+  // };
 
   User.associate = function (models) {
     models.User.hasOne(models.userInfo);

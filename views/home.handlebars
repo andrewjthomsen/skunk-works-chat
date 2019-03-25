@@ -1,8 +1,10 @@
 <div class="container-fluid">
 
   <div class="jumbotron">
+    <a id="logout-btn" href="/logout" class="btn btn-primary btn-lg mt-3" role="button">Logout</a>
     <h1 class="display-4">Send Message</h1>
     <p class="lead">This is a simple chat server</p>
+
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <input id="name-txt" class="form-control" placeholder="Name">
@@ -15,8 +17,8 @@
 
       <div id="message-div">
         {{#each chatTB}}
-        <h4>{{this.userInfo.firstName}}</h4>
-        <p>{{this.message}}</p>
+        <p class="font-weight-bold my-0">{{this.userInfo.firstName}}</p>
+        <p class="my-0">{{this.message}}</p>
         {{/each}}
       </div>
 

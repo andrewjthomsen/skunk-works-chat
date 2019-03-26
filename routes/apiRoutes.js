@@ -31,7 +31,7 @@ module.exports = function (app, io) {
   app.get("/api/chat/all", function (req, res) {
 
     db.Chat.findAll({
-      include: [db.userInfo]
+      include: [db.User]
     }).then(function (chatTB) {
       console.log(chatTB);
       res.json(chatTB);
@@ -39,12 +39,12 @@ module.exports = function (app, io) {
   });
 
   // get all chat from user
-  app.get("/api/chat/:chatID", function (req, res) {
+  app.get("/api/chat/:ChatID", function (req, res) {
 
     db.Chat.findAll({
-      include: [db.userInfo],
+      include: [db.User],
       where: {
-        id: req.params.chatID
+        id: req.params.ChatID
       }
     }).then(function (chatTB) {
       res.json(chatTB);
@@ -53,9 +53,9 @@ module.exports = function (app, io) {
   });
 
   // get all userInfo
-  app.get("/api/userinfo/all", function (req, res) {
+  app.get("/api/user/all", function (req, res) {
 
-    db.userInfo.findAll({
+    db.User.findAll({
       include: [db.Chat]
     }).then(function (userInfoTB) {
       res.json(userInfoTB);
@@ -71,7 +71,7 @@ module.exports = function (app, io) {
 
     db.Chat.create({
       message: req.body.message,
-      userInfoId: req.session.userId,
+      UserId: req.session.userId,
     }).then(function (chatDB) {
       console.log(chatDB);
       io.emit("chat-sent", chatDB);

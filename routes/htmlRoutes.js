@@ -9,7 +9,7 @@ module.exports = function (app) {
   app.get("/home", function (req, res) {
     if (req.session.loggedin) {
       db.Chat.findAll({
-        include: [db.userInfo],
+        include: [db.User],
       }).then(function (chatTable) {
         console.log("chat table here foo!");
         console.log(chatTable);

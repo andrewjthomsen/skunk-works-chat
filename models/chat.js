@@ -3,17 +3,8 @@ module.exports = function (sequelize, DataTypes) {
     message: DataTypes.TEXT
   });
 
-  // Chat.associate = function (models) {
-  //   models.Chat.belongsTo(models.User, {
-  //     onDelete: "CASCADE",
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
-
   Chat.associate = function (models) {
-    models.Chat.belongsTo(models.userInfo, {
+    models.Chat.belongsTo(models.User, {
       onDelete: "CASCADE",
       foreignKey: {
         allowNull: false

@@ -35,7 +35,7 @@ socket.on("chat-sent", function (res) {
   console.log(res.id);
 
   API.getOneChat(res.id).then(function (results) {
-    $("#message-div").append("<p class='font-weight-bold my-0'>" + results[0].userInfo.firstName + "</h4><p class='my-0'>" + results[0].message + "</p>");
+    $("#message-div").append("<p class='font-weight-bold my-0'>" + results[0].User.firstName + "</h4><p class='my-0'>" + results[0].message + "</p>");
   });
 
 
@@ -54,5 +54,7 @@ $("#send-btn").on("click", function (e) {
   }).catch(function (err) {
     console.log(err);
   });
+
+  $("#message").val("");
 
 });

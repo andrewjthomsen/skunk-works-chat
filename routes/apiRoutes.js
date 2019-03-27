@@ -172,6 +172,12 @@ module.exports = function (app, io) {
     }
 
   });
-
+  // app.get("/api/home/:username", function(req, res) {
+  //   db.User.findOne({where: { username: req.params.username } }).then(function(dbUser) {
+  //     var username = req.params.username;
+  //     res.json(dbUser);
+  //     console.log(dbUser);
+  //   });
+  // });
 
 };

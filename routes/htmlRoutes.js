@@ -53,7 +53,6 @@ module.exports = function (app) {
         response.redirect("/");
       }
     });
-<<<<<<< HEAD
     
   });
   //===========
@@ -70,11 +69,6 @@ module.exports = function (app) {
   });
   
   app.post("/auth", function(request, response) {
-=======
-  });*/
-
-  app.post("/auth", function (request, response) {
->>>>>>> 17279db63b5dfcecac4da4d55d57cae28e56c3a4
     var username = request.body.username;
     var password = request.body.password;
     if (username && password) {
@@ -87,13 +81,10 @@ module.exports = function (app) {
         if (results.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
-<<<<<<< HEAD
-          response.redirect("/home/"+ username);
-=======
+
           // stores userID to session data
           request.session.userId = results[0].dataValues.id;
-          response.redirect("/home");
->>>>>>> 17279db63b5dfcecac4da4d55d57cae28e56c3a4
+          response.redirect("/home/"+ username);
         } else {
           response.redirect("/");
         }

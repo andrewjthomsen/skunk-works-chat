@@ -21,22 +21,22 @@ module.exports = function(app) {
   //=================
   app.get("/profile/:username", function(request, response) {
     var username = request.params.username;
-    if (username) {
-      db.User.findAll({
-        where: {
-          username: username
-          // email: email
-        }
-      }).then(function(results) {
-        if (results.length > 0) {
-          response.redirect("/profile/"+ username);
-        } else {
-          response.redirect("/");
-        }
-      });
-    } else {
-      response.redirect("/");
-    }
+    db.User.findOne({
+      where: {
+        username: username
+      }
+    }).then(function(results) {
+      console.log(results);
+      if (results) {
+        response.render("profile", {
+          username:results.username,
+          email:results.email
+        });
+      } else {
+        response.redirect("/");
+      }
+    });
+    
   });
   //===========
   //profile section

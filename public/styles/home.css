@@ -1,0 +1,465 @@
+  /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+
+        /*  ##  Glossary:
+                          --> Flipcard
+                          --> Asterisk (*)
+                          --> Link
+                          --> Pop-out
+                          --> Header
+                          --> Chat
+                          --> Button
+                          --> Footer
+                          --> List
+                          --> User
+                          --> Spare Media Queries
+                      ALL Media Queries are nested below their 
+                      parent CSS. This also goes for :active & :hover */
+
+        /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+        /* ============================================================= */
+
+        /*                         FLIP CARD CSS                         */
+
+        /* ============================================================= */
+
+        .flip-card {
+          background-color: transparent;
+          width: 200px;
+          height: 200px;
+      }
+
+      @media only screen and (max-width: 500px) {
+          .flip-card {
+              margin: 0 0 0 25vw;
+          }
+      }
+
+      .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.6s;
+      }
+
+      .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+      }
+
+      /* Below rule set with !important as all final users will use this and it most be correct */
+
+      .flip-card-front,
+      .flip-card-back {
+          position: absolute;
+          width: 200px;
+          max-width: 200px !important;
+          height: 200px;
+          max-height: 200px !important;
+          backface-visibility: hidden;
+          margin: -25px 0 0 0;
+      }
+
+      .flip-card-front {
+          background-color: transparent;
+          color: black;
+          z-index: 2;
+      }
+
+      .flip-card-back {
+          transform: rotateY(180deg);
+          z-index: 1;
+      }
+
+      @media only screen and (max-width: 600px) {
+          #mySidenav {
+              color: #00000099;
+              margin: 710px 0 0 0;
+          }
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*            "*" is short hand for EVERYTHING                   */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      * {
+          font-family: 'Montserrat', sans-serif;
+          border-radius: 20px;
+          padding: 5px 0 0 0;
+          margin: 5px 0 0 0;
+          z-index: 0;
+          outline: none;
+          list-style-type: none;
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*                           Link                               */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      a:link {
+          color: #55aeae77;
+      }
+
+      a:hover {
+          color: #55aeae;
+      }
+
+      a:visited {
+          color: yellowgreen;
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*                "Pop-out Side Navigation Bar                   */
+      /* ============================================================= */
+      /* ============================================================= */
+
+      .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+      }
+
+      @media only screen and (max-width: 520px) {
+          #mySidenav {
+              width: 100vw;
+              margin: 0 0 0 0;
+              border-radius: 0;
+              background-color: #00000097;
+          }
+      }
+
+      .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #ffffff98;
+          display: block;
+          transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+          color: #55aeae;
+      }
+
+      .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+      }
+
+      @media screen and (max-height: 450px) {
+          .sidenav {
+              padding-top: 15px;
+          }
+
+          .sidenav a {
+              font-size: 18px;
+          }
+      }
+
+      #mySidenav {
+          background-color: #00000097;
+          color: #ffffff;
+          text-shadow: 2px 2px black;
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*                        Header Rules                           */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      #site-hdr-title {
+          text-align: center;
+          letter-spacing: 1.4vw;
+          color: #00000033;
+      }
+
+      #site-hdr-title:hover {
+          color: #55aeae;
+      }
+
+      @media only screen and (max-width: 975px) {
+          #site-hdr-title {
+              letter-spacing: 0.7vw;
+          }
+      }
+
+      @media only screen and (max-width: 750px) {
+          #site-hdr-title {
+              letter-spacing: 0vw;
+          }
+      }
+
+      @media only screen and (max-width: 600px) {
+          #site-hdr-title {
+              font-size: 28px;
+          }
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*                   chat interaction div                        */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      #chat-room {
+          margin: -300px 0 0 20%;
+      }
+
+      @media only screen and (max-width: 1000px) {
+          #chat-room {
+              margin: 0 0 0 15vw;
+          }
+      }
+
+      @media only screen and (max-width: 510px) {
+          #chat-room {
+              margin: 0 0 0 15vw;
+          }
+      }
+
+      #recieveMessges {
+          width: 60vw;
+          height: 500px;
+          background-color: white;
+          border: 2mm ridge rgb(21, 99, 74, 0.6);
+          margin: 0 0 0 0;
+          border-radius: 0 20px 0 0;
+      }
+
+      @media only screen and (max-width: 510px) {
+          #recieveMessges {
+              margin: 0 0 0 0;
+          }
+      }
+
+      #messageDiv {
+          width: 55vw;
+          height: 50px;
+          background-color: white;
+          border: 2mm ridge rgb(21, 99, 74, 0.6);
+          margin: -30px 0 0 0;
+          border-radius: 0px 0 0 20px;
+          float: left;
+      }
+
+      @media only screen and (max-width: 900px) {
+          #messageDiv {
+              width: 55vw;
+          }
+      }
+
+      @media only screen and (max-width: 650px) {
+          #messageDiv {
+              width: 53vw;
+          }
+      }
+
+      @media only screen and (max-width: 600px) {
+          #messageDiv {
+              width: 53vw;
+          }
+      }
+
+      @media only screen and (max-width: 550px) {
+          #messageDiv {
+              width: 52vw;
+          }
+      }
+
+      @media only screen and (max-width: 500px) {
+          #messageDiv {
+              width: 50vw;
+          }
+      }
+
+
+
+      @media only screen and (max-width: 400px) {
+          #messageDiv {
+              width: 45vw;
+          }
+      }
+
+      @media only screen and (max-width: 300px) {
+          #messageDiv {
+              width: 41vw;
+          }
+      }
+
+
+
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*                          Button                               */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      #submit-btn {
+          border-radius: 0 0 10px 0;
+          width: 5vw;
+          height: 44px;
+          margin: -24px 0 0 0;
+          background: #55aeae;
+          padding: 0 12px 0 15px;
+          color: #00000022;
+          letter-spacing: 3vw;
+          float: left;
+          border: 6px ridge rgb(21, 99, 74, 0.2);
+          overflow: contain;
+      }
+
+      #submit-btn:hover {
+          border: 5px ridge rgb(21, 99, 74, 0.2);
+      }
+
+      @media only screen and (max-width: 1000px) {
+          #submit-btn {
+              letter-spacing: 2vw;
+              padding: 0 3px 0 7px;
+              color: #00000022;
+              min-width: 45px;
+          }
+      }
+
+      @media only screen and (max-width: 500px) {
+          .btn {
+              letter-spacing: 1vw;
+          }
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*                         Footer                                */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      #footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          z-index: -1;
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*            List Elements (Hb below profile pic)               */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      @media only screen and (max-width: 500px) {
+          li {
+              margin: 0 0 0 0;
+          }
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*            user name / email rules                            */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      #user-name,
+      #user-email {
+          font-size: 20px;
+          text-align: center;
+      }
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*            Spare Media Query premade code .                   */
+
+      /* ============================================================= */
+      /* ============================================================= */
+
+      /*
+    @media only screen and (max-width: 400px) {
+        {
+      .#: its-param;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+        {
+      .#: its-param;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+        {
+      .#: its-param;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+        {
+      .#: its-param;
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+        {
+      .#: its-param;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+        {
+      .#: its-param;
+      }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        {
+      .#: its-param;
+      }
+    }
+
+    @media only screen and (max-width: 1350px) {
+        {
+      .#: its-param;
+      }
+    }
+*/

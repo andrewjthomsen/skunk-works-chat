@@ -1,0 +1,66 @@
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <hr>
+    <ul>
+        <li id="user-name" align="center">{{userName}}</li>
+        <a href="{{userNamel}}" target="_blank">
+            <li id="user-email" align="center"><a href="{{userEmail}}" target="_blank">Email Me</li>
+        </a>
+    </ul>
+    <a href="#">Breakdown</a>
+    <a href="#">Code</a>
+    <a href="#">Setup</a>
+    <a href="#">Dev Team</a>
+</div>
+
+<br>
+
+<h1 align="center" id="site-hdr-title">S K U N K W O R K S &nbsp; C H A T </h1>
+
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="https://i.imgur.com/igQT2K9.png" alt="Avatar" width="200" height="200 !important">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+<!-- chat room below -->
+
+<div class="container" id="chat-room">
+    <div type="text" id="recieveMessges" placeholder="HELLO">
+        <!-- This is where the chat is going to show -->
+        <!-- Need to add vertical scrollbar here -->
+
+        <!-- Below is a sample chat-bubble -->
+        <div id="message-div">
+
+            <p class="font-weight-bold my-0">Username goes here</p>
+            <p class="my-0">The message / chat goes here. This will duplicate it self via code. Needs to have styles</p>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <span>
+        <!-- This needs to be an input so we can input test -->
+        <div type="text" id="messageDiv" placeholder="share something awesome...">Message</div>
+    </span>
+
+    <span>
+        <button type="button" id="submit-btn" class="btn btn-info">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </span>
+
+</div>
+
+<footer id="footer" align="center">@ 2019 | <a href="#dev-team">These Guys</a></footer>

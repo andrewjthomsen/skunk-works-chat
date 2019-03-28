@@ -1,28 +1,33 @@
-<div class="container-fluid">
-
-  <div class="jumbotron">
-    <a id="logout-btn" href="/logout" class="btn btn-primary btn-lg mt-3" role="button">Logout</a>
-    <h1 class="display-4">Send Message</h1>
-    <p class="lead">This is a simple chat server</p>
-
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <input id="name-txt" class="form-control" placeholder="Name">
-    <br>
-    <textarea id="message" , class="form-control" placeholder="Your Message Here"></textarea>
-    <a id="send-btn" class="btn btn-primary btn-lg mt-3" role="button">Send</a>
-    <hr class="my-4">
-    <div id="messages">
-      <!-- Messages goes here -->
-
-      <div id="message-div">
-        {{#each chatTB}}
-        <p class="font-weight-bold my-0">{{this.User.firstName}}</p>
-        <p class="my-0">{{this.message}}</p>
-        {{/each}}
-      </div>
-
-    </div>
+<form>
+  <!-- chat room container -->
+  <div id="textBox" contenteditable="false" name="textBox">
   </div>
+  <!-- chat room container -->
+  <div id="chatroom" name="chatroom" placeholder="Chat with me please" readonly>
+    <!-- 
+****************************************************************************
+Sample Chat Posts should be deleted befor adding to handlebars. 
+****************************************************************************
+-->
+    {{#each chatTB}}
+    {{#if this.authorShip}}
+    <div id="message-div" class="user-two">
+      <p class="font-weight-bold my-0 user">{{this.User.username}}</p>
+      <p class="my-0">{{this.message}}</p>
+    </div>
+    {{else}}
+    <div id="message-div" class="user-one">
+      <p class="font-weight-bold my-0 user">{{this.User.username}}</p>
+      <p class="my-0">{{this.message}}</p>
+    </div>
+    {{/if}}
+    {{/each}}
+    <!-- End -->
 
-</div>
+  </div>
+  <br>
+  <!-- chat post message container -->
+  <textarea maxlength="144" id="message" name="chatmsg" placeholder=" Add your message here "></textarea>
+  <!-- chat post submit button -->
+  <input id="send-btn" name="save" value=" P O S T " />
+</form>

@@ -33,11 +33,22 @@ var API = {
 socket.on("chat-sent", function (res) {
   console.log("chatID:");
   console.log(res.id);
-
+  // < p class= 'font-weight-bold my-0' > " + results[0].User.firstName + "</h4 > <p class='my-0'>" + results[0].message + "</p>");
   API.getOneChat(res.id).then(function (results) {
-    $("#message-div").append("<p class='font-weight-bold my-0'>" + results[0].User.firstName + "</h4><p class='my-0'>" + results[0].message + "</p>");
-  });
+    var userClass = "user-two";
 
+    if (results[0].authorShip) {
+      userClass = "user-one";
+    }
+
+
+    $("#chatroom").append(
+      "<div id='message-div' class=" + userClass + ">" +
+      "<p class='font-weight-bold my-0 user'>" + results[0].User.username + "</p>" +
+      "<p class='my-0'>" + results[0].message + "</p>"
+    );
+
+  });
 
 });
 
@@ -56,5 +67,24 @@ $("#send-btn").on("click", function (e) {
   });
 
   $("#message").val("");
+
+});
+
+$("#signup-btn").on("click", function (e) {
+  e.preventDefault();
+
+  $.post("/api/createuser", {/* userData */ })
+    .then(function (res) {
+      console.log(res);
+      window.location = "/home";
+    })
+    .catch(function (err) {
+      if (err === "Username or email exists.") {
+        console.log("user already exists");
+      }
+      else {
+        // something might have gone wrong with the request
+      }
+    });
 
 });

@@ -72,7 +72,6 @@ module.exports = function (app, io) {
       res.redirect("/");
     }
 
-
   });
 
   // ---------- User API --------------------
@@ -119,36 +118,40 @@ module.exports = function (app, io) {
 
   });
 
-  // check if user with this username already exist
-  // returns an array.length of 0 if user does not exist
-  app.get("/api/verify/username/:username", function (req, res) {
 
+  app.post("/api/createuser/", function (req, res) {
     db.User.findAll({
       where: {
-        username: req.params.username
+        $or: [
+          {
+            username: req.body.username
+          },
+          {
+            email: req.body.email
+          }
+        ]
       }
-    }).then(function (userTB) {
-      res.json(userTB);
-    });
+    }).then(function (users) {
 
+      if (users > 0) {
+        res.status(400).end("Username or email exists.");
+        return;
+      } else {
+        db.User.create({
+          username: req.body.username,
+          email: req.body.email,
+          password: req.body.password
+        }).then(function (createUser) {
+          console.log(createUser);
+          res.status(200).end();
+        });
+      }
+    });
   });
 
-  // check if user with this email already exist
-  // returns an array.length of 0 if user does not exist
-  app.get("/api/verify/email/:email", function (req, res) {
-
-    db.User.findAll({
-      where: {
-        email: req.params.email
-      }
-    }).then(function (userTB) {
-      res.json(userTB);
-    });
-
-  });
 
   // update user's Info
-  app.put("/api/user/:id", function (req, res) {
+  app.put("/api/user/update", function (req, res) {
 
     // check if user is logged in
     if (req.session.loggedin) {
@@ -159,7 +162,7 @@ module.exports = function (app, io) {
         bio: req.body.bio
       }, {
         where: {
-          id: req.params.id
+          id: req.session.userId
         },
         returning: true
       }).then(function (userTB) {

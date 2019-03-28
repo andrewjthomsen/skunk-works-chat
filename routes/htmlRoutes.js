@@ -11,8 +11,15 @@ module.exports = function (app) {
       db.Chat.findAll({
         include: [db.User],
       }).then(function (chatTable) {
-        console.log("chat table here foo!");
-        console.log(chatTable);
+
+        for (i in chatTable) {
+          if (req.session.username === chatTable[i].User.username) {
+            chatTable[i].authorShip = true;
+          } else {
+            chatTable[i].authorShip = false;
+          }
+        }
+
         res.render("home", {
           chatTB: chatTable
         });
@@ -21,6 +28,10 @@ module.exports = function (app) {
     } else {
       res.redirect("/");
     }
+  });
+
+  app.get("/signup", function (req, res) {
+    res.render("register");
   });
 
   app.get("/hometest", function (req, res) {
@@ -51,7 +62,9 @@ module.exports = function (app) {
   app.post("/auth", function (request, response) {
     var username = request.body.username;
     var password = request.body.password;
+
     if (username && password) {
+      // check if user && pass not null
       db.User.findAll({
         where: {
           username: username,
@@ -65,10 +78,14 @@ module.exports = function (app) {
           request.session.userId = results[0].dataValues.id;
           response.redirect("/home");
         } else {
-          response.redirect("/");
+          response.render("indexFail", {
+            loggedInFailed: true
+          });
         }
       });
+
     } else {
+      // return to home when user and pass are null
       response.redirect("/");
     }
   });

@@ -25,6 +25,16 @@ var API = {
       type: "POST",
       data: JSON.stringify(dataToSend)
     });
+  },
+  createUser: function (dataToSend) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      url: "/api/createuser/",
+      type: "POST",
+      data: JSON.stringify(dataToSend)
+    });
   }
 };
 
@@ -73,18 +83,37 @@ $("#send-btn").on("click", function (e) {
 $("#signup-btn").on("click", function (e) {
   e.preventDefault();
 
-  $.post("/api/createuser", {/* userData */ })
-    .then(function (res) {
-      console.log(res);
-      window.location = "/home";
-    })
-    .catch(function (err) {
-      if (err === "Username or email exists.") {
-        console.log("user already exists");
-      }
-      else {
-        // something might have gone wrong with the request
-      }
-    });
+  // form values
+  var userName = $("#user-text").val().trim();
+  var emailAdd = $("#email-text").val().trim();
+  var emailAdVerify = $("#email-text2").val().trim();
+  var pass = $("#pass-text").val().trim();
+  var passVerify = $("#pass-text2").val().trim();
+
+  // start validation below:
+
+
+  // Enf of validatopn code
+
+  // API call below:
+
+  newUserData = {
+    username: userName,
+    email: emailAdd,
+    password: pass
+  };
+
+  API.createUser(newUserData).then(function (res) {
+    console.log(res);
+    window.location = "/newuser";
+  }).catch(function (err) {
+    if (err === "Username or email exists.") {
+      console.log("user already exists");
+    }
+    else {
+      // something might have gone wrong with the request
+      console.log("server error or something");
+    }
+  });
 
 });

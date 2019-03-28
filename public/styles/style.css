@@ -1,0 +1,131 @@
+.jumbotron {
+  width: 96vw;
+  height: 50vw;
+  border-radius: 25px;
+  margin: 10vh 0 0 2vh;
+  overflow: scroll;
+  box-shadow: 0px -3px 20px black;
+}
+
+.form {
+  border-radius: 0 20px 0 20px;
+}
+
+*{
+font-family: 'Montserrat', sans-serif;
+outline: none;
+border: none;
+border-color: transparent;
+}
+
+textarea, 
+select,
+button,
+ input,
+  .btn,
+     a { 
+  outline: none; 
+}
+
+#chatroom {
+  width: 80vw;
+  min-height: 50vh;
+  border-radius: 20px;
+  margin: 0 0 0 5vw;
+  border: none;
+  box-shadow: inset 3px 3px 10px #000000;
+  padding: 15px;
+  overflow-x: none;
+  overflow-y: scroll;
+  background-color: white;
+
+}
+#message {
+  width: 80vw;
+  max-height: 30px;
+  border-radius: 20px;
+  margin: 0 0 0 5vw;
+  box-shadow: inset 3px 3px 10px #000000;
+  padding: 3px 0 0 15px;
+  overflow-x: none;
+  overflow-y: scroll;
+
+}
+
+
+#user1 {
+
+}
+
+#user1-msg {
+
+}
+
+#user2 {
+
+}
+#user2-msg {
+
+}
+
+
+
+#send-btn {
+width: 80vw;
+  border-radius: 20px;
+  margin: 0 0 0 5vw;
+  border: none;
+  box-shadow: 3px 3px 10px black;
+  letter-spacing: 7vw;
+color: #00000066;
+
+}
+
+#share:hover {
+color: #000000;
+box-shadow: 3px 3px 5px black;
+}
+
+#share:active {
+color: #000000;
+text-shadow: 1px 1px black, black -1px -1px;
+}
+
+
+.user-one {
+  padding: 7px;
+  Width: 35vw;
+  background: #ffffff88;
+  border-radius: 0 10px 0 10px;
+  box-shadow: 3px 3px 2px black;
+  text-align: left;
+}
+
+.user-two {
+  padding: 7px;
+  Width: 35vw;
+  background: #00000076;
+  color: whitesmoke;
+  border-radius: 0 10px 0 10px;
+  box-shadow: 3px 3px 2px black;
+  text-align: right;
+  margin: 0 0 0 40vw;
+  justify-content: right;
+}
+
+.btn {
+border-radius: 0 10px 0 10px;
+box-shadow: 3px 3px black;
+}
+
+.btn:hover {
+box-shadow: 2px 2px black;
+}
+
+.btn:active {
+box-shadow: 0px 0px black;
+}
+
+input:focus {
+outline:none;
+}

@@ -33,7 +33,7 @@ var API = {
 socket.on("chat-sent", function (res) {
   console.log("chatID:");
   console.log(res.id);
-  // < p class= 'font-weight-bold my-0' > " + results[0].User.firstName + "</h4 > <p class='my-0'>" + results[0].message + "</p>");
+
   API.getOneChat(res.id).then(function (results) {
     var userClass = "user-two";
 

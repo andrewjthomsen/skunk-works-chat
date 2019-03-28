@@ -30,8 +30,12 @@ module.exports = function (app) {
     }
   });
 
-  app.get("/signup", function (req, res) {
+  app.get("/register", function (req, res) {
     res.render("register");
+  });
+
+  app.get("/newuser", function (req, res) {
+    res.render("indexNewUser");
   });
 
   app.get("/hometest", function (req, res) {
@@ -46,18 +50,6 @@ module.exports = function (app) {
       res.redirect("/");
     }
   });
-
-  /*
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });*/
 
   app.post("/auth", function (request, response) {
     var username = request.body.username;

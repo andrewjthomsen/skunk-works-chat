@@ -56,6 +56,29 @@ socket.on("chat-sent", function (res) {
       "<div id='message-div' class=" + userClass + ">" +
       "<p class='font-weight-bold my-0 user'>" + results[0].User.username + "</p>" +
       "<p class='my-0'>" + results[0].message + "</p>"
+      // =================================================================
+      // Adding code to send location/append location
+        // if (!navigator.geolocation) {
+        //   return alert("Geolocation is not supported by your browser.");
+        // }
+        // =============================================================
+      // Code needs to be moved and reformated, but am placing it here until I figure out where it goes
+      // io.to(user.room).emit('locationMessage', generateLocationMessage(user.username,`https://google.com/maps?q=${coords.latitude},${coords.longitude}`))
+      // // ======================================================================
+        // navigator.geolocation.getCurrentPosition(position => {
+        //   socket.emit(
+        //     "sendLocation",
+        //     {
+        //       latitude: position.coords.latitude,
+        //       longitude: position.coords.longitude
+        //     },
+        //     () => {
+        //       $sendLocationButton.removeAttribute("disabled");
+        //       console.log("Location shared!");
+        //     }
+        //   );
+        // });
+      // ==================================================================================
     );
 
   });

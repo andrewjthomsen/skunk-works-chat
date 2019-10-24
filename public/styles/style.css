@@ -29,7 +29,7 @@ button,
 
 #chatroom {
   width: 80vw;
-  min-height: 50vh;
+  min-height: 50vh; 
   border-radius: 20px;
   margin: 0 0 0 5vw;
   border: none;
@@ -51,24 +51,6 @@ button,
   overflow-y: scroll;
 
 }
-
-
-#user1 {
-
-}
-
-#user1-msg {
-
-}
-
-#user2 {
-
-}
-#user2-msg {
-
-}
-
-
 
 #send-btn {
 width: 80vw;

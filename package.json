@@ -19,7 +19,7 @@
     "heroku": "^7.22.7",
     "http": "0.0.0",
     "mysql2": "^1.6.4",
-    "sequelize": "^4.41.2",
+    "sequelize": "^4.44.3",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
